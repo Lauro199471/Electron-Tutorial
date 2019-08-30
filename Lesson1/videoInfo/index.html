@@ -1,26 +1,46 @@
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" href="styles.css">
-     <title>Document</title>
- </head>
- <body>
-    
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap Includes -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
     <div class="text-light my-4">
-        
+
         <h1 class="text-center mb-4">Video Info</h1>
 
         <form>
             <div>
-                <label>Select a video</label>
+                <label class="text-info font-weight-bold">Select a video</label>
                 <br>
-                <input class="btn btn-primary" type="file" accept="video/*">
+                <div class="custom-file col-md-4">
+                    <input type="file" class="custom-file-input" id="customFile" accept="video/*">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
             </div>
+            <button type="submit" class="btn btn-primary my-4 submitButton">Submit</button>
         </form>
+
+        <script>
+        // Button Function Handler
+        document.querySelector('form').addEventListener('submit', (event) =>{
+            event.preventDefault();
+
+        });
+        </script>
     </div>
 
- </body>
- </html>
+</body>
+
+</html>
