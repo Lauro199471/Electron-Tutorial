@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap Includes -->
     <link rel="stylesheet" href="contents/bootstrap-4.3.1-dist/css/bootstrap.min.css" />
-    
+
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script>let $ = require('jquery');</script>    
-    <script>require('popper.js');</script>
-    <script>require('bootstrap');</script>
+    <script>
+        let $ = require('jquery');
+        require('popper.js');
+        require('bootstrap');
+    </script>
 
     <link rel="stylesheet" href="styles.css">
 
-    <title>Document</title>
+    <title>Video Info</title>
 </head>
 
 <body>
@@ -32,36 +35,41 @@
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-info my-4 submitButton">Submit</button>
+            <button type="submit" class="btn btn-primary my-4 submitButton">Submit</button>
         </form>
 
-        <h3 id="result"></h1>
+        <h3 id="result"></h3>
 
         <script>
             // Add the following code if you want the name of the file appear on select
             $(".custom-file-input").on("change", function() {
                 var fileName = $(this).val().split("\\").pop();
-                $(this).siblings(".custom-file-label").addClass("selected").html(fileName); 
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
             });
-            //
+        </script>
+
+        <script>
             const electron = require('electron');
-            const { ipcRenderer } = electron;
+            const {
+                ipcRenderer
+            } = electron;
 
             document.querySelector('form').addEventListener('submit', (event) => {
-            event.preventDefault();
-            const { path } = document.querySelector('input').files[0];
+                event.preventDefault();
+                const {
+                    path
+                } = document.querySelector('input').files[0];
 
-            // send info to electron from main window
-            ipcRenderer.send('video:submit', path);
+                // send info to electron from main window
+                ipcRenderer.send('video:submit', path);
             });
 
             ipcRenderer.on('video:metadata', (event, duration) => {
-            // receive info into main window
-            document.querySelector('#result').innerHTML = `Video is ${duration} seconds`;
+                // receive info into main window
+                document.querySelector('#result').innerHTML = `Video is ${duration} seconds`;
             });
         </script>
     </div>
-
 </body>
 
 </html>
