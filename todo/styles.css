@@ -1,0 +1,39 @@
+body{
+    background: #393f4d;
+}
+
+.jumbotron.titleOne{
+    padding: 1rem 1rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: #feda6a; 
+}
+
+.jumbotron.titleTwo{
+    padding: 1rem 1rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: #7dce94; 
+}
+
+.jumbotron.titleThree{
+    padding: 1rem 1rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: #cd5554; 
+}
+
+.jumbotron.titleFour{
+    padding: 1rem 1rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: #7acfd6; 
+}
